@@ -53,13 +53,13 @@ cfg.MODEL.ANCHOR_GENERATOR.SIZES = [[8], [16], [32], [64], [128]]
 # Three aspect ratios (same for all in feature maps)
 cfg.MODEL.ANCHOR_GENERATOR.ASPECT_RATIOS = [[0.2, 0.5, 1, 2, 5]]
 cfg.MODEL.ROI_MASK_HEAD.POOLER_RESOLUTION = 14
-cfg.TEST.DETECTIONS_PER_IMAGE = 500
+cfg.TEST.DETECTIONS_PER_IMAGE = 2000
 cfg.INPUT.CROP.SIZE = [1.0, 1.0]
 cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = 0.2
 cfg.MODEL.ROI_HEADS.BATCH_SIZE_PER_IMAGE = 128
 cfg.MODEL.ROI_HEADS.NUM_CLASSES = 1
 cfg.OUTPUT_DIR = './detectron2_results/'
-cfg.MODEL.WEIGHTS = os.path.join(cfg.OUTPUT_DIR, "model_final (copy).pth")
+cfg.MODEL.WEIGHTS = os.path.join(cfg.OUTPUT_DIR, "model_final_submit.pth")
 # set the testing threshold for this model
 cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = 0.9
 predictor = DefaultPredictor(cfg)
